@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 50px;
+}
+
+.heading {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.chat-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+}
+.chat-msg {
+  font-size: 18px;
+  color: #333;
+}
+.chat-area {
+  overflow-y: scroll;
+  height: 350px;
+}
+.chat-input {
+  background-color: #f3f3f3;
+  padding: 15px 30px;
+  margin-top: 10px;
+}
+.input-txt {
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.input-txt:focus {
+  outline: none;
+}
+
+.send-btn {
+  background-color: #05cdf0;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}

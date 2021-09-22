@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './socket.css';
 
 function Socket() {
   const [messages, setMessages] = useState([])
@@ -28,13 +29,24 @@ function Socket() {
     
   }
   return(
-    <div>
-        <form onSubmit={handleSubmit}>
-            <input type="text" onChange={ e => setInputVal(e.target.value)}
-            value={inputVal} autoFocus/>
-            <button type="submit">Send</button>
-        </form>
-        {messages.map(message => <ul><li>{message.msg}</li></ul>)}
+    <div className="container">
+        <h2 className="heading">AI Chatbot</h2>
+        <div className="chat-container">
+            <div className="chat-area">
+            {messages.map(message => <p className="chat-msg">{message.msg}</p>)}
+            </div>
+        
+            <div className="chat-input">
+                <form onSubmit={handleSubmit}>
+                    <div className="input-group">
+                        <input type="text" className="input-txt" onChange={ e => setInputVal(e.target.value)}
+                        value={inputVal} placeholder="Type your message.." autoFocus required />
+                        <button type="submit" className="send-btn">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
     </div>
 
   )
