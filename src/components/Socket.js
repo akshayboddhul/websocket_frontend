@@ -7,15 +7,15 @@ function Socket() {
 
   
   var ws = null
+  ws = new WebSocket("ws://localhost:8000/ws")
   useEffect(() => {
-    ws = new WebSocket("ws://localhost:8000/ws")
     ws.onopen = () => {
     //   ws.send(JSON.stringify({ type: "message", text:msg, date:Date.now(), id:1}))
         console.log("Client Connected")
     }
     ws.onmessage = (event) => {
         const dataFromServer = JSON.parse(event.data);
-        console.log("DATAFROMSERVER:", dataFromServer)
+        // console.log("DATAFROMSERVER:", dataFromServer)
         setMessages([ ...messages,{ msg: dataFromServer.msg }])
     }
   })
@@ -24,7 +24,7 @@ function Socket() {
   const handleSubmit = e => {
     e.preventDefault();
     ws.send(JSON.stringify({ msg: inputVal}))
-    console.log(messages)
+    // console.log(messages)
     setInputVal("")
     
   }
